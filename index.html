@@ -1087,15 +1087,18 @@
                 if (savedConfig) {
                     const parsedConfig = JSON.parse(savedConfig);
                     gameTitle = parsedConfig.gameTitle || "RUEDA DE PREGUNTAS";
-                    wheelData = parsedConfig.wheelData || wheelData; // Usar los datos predeterminados si no hay guardados
-                    gameTitleElement.textContent = gameTitle; // Actualizar el título en la UI
-                    drawWheel(); // Redibujar la rueda con la configuración cargada
-                    showMessage("¡Configuración cargada!");
+                    wheelData = parsedConfig.wheelData || wheelData;
+                    // Usar los datos predeterminados si no hay guardados
+                    gameTitleElement.textContent = gameTitle;
+                    // Actualizar el título en la UI
+                    drawWheel();
+                    // Redibujar la rueda con la configuración cargada
+                    // showMessage("¡Configuración cargada!"); // Puedes dejar este mensaje o eliminarlo
                 } else {
-                    showMessage("No se encontró configuración guardada. Usando la configuración predeterminada.");
+                    // showMessage("No se encontró configuración guardada. Usando la configuración predeterminada."); // Eliminar o comentar esta línea
                 }
             } catch (e) {
-                showMessage("Error al cargar la configuración: " + e.message + ". Usando la configuración predeterminada.");
+                // showMessage("Error al cargar la configuración: " + e.message + ". Usando la configuración predeterminada."); // Eliminar o comentar esta línea
                 // Si hay un error, resetea a los datos iniciales para evitar un estado roto
                 gameTitle = "RUEDA DE PREGUNTAS";
                 // Restablecer wheelData a su estado inicial si hay un error en la carga
